@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Student Feedback Manager</h1>
+
+    <form id="feedbackForm">
+        <input type="text" id="name"
+            placeholder="Enter your name" required>
+
+        <select id="rating" required>
+            <option value="">Select Rating</option>
+            <option value="1">1 Star</option>
+            <option value="2">2 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="5">5 Stars</option>
+        </select>
+
+        <textarea id="comment"
+            placeholder="Enter your comment" required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+
+    <a href="feedback.html">View All Feedback</a>
+
+    <script src="script.js"></script>
+</body>
+</html>
