@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>All Student Feedback</h1>
+
+    <div id="feedbackList"></div>
+
+    <a href="index.html">Back to Form</a>
+
+    <script>
+        async function loadFeedback() {
+            const response = await fetch("/feedback");
+            const data = await response.json();
+
+            const list = document.getElementById("feedbackList");
+
+            list.innerHTML = "";
+
+            data.forEach(item => {
+                list.innerHTML += `
+                    <div class="card">
+                        <h3>${item.name}</h3>
+                        <p>Rating: ${item.rating}/5</p>
+                        <p>${item.comment}</p>
+                    </div>
+                `;
+            });
+        }
+
+        loadFeedback();
+    </script>
+
+</body>
+</html>
